@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <style>text{font-family:Arial;font-size:14px}.t{font-weight:bold}</style>
+  <rect x="40" y="40" width="220" height="140" fill="#eef" stroke="#333"/><text x="55" y="65" class="t">users</text><text x="55" y="90">id PK</text><text x="55" y="110">email UNIQUE</text><text x="55" y="130">role, account_status</text>
+  <rect x="320" y="40" width="220" height="110" fill="#efe" stroke="#333"/><text x="335" y="65" class="t">categories</text><text x="335" y="90">id PK</text><text x="335" y="110">name UNIQUE</text>
+  <rect x="600" y="40" width="260" height="170" fill="#fee" stroke="#333"/><text x="615" y="65" class="t">courses</text><text x="615" y="90">id PK</text><text x="615" y="110">category_id FK</text><text x="615" y="130">instructor_id FK users</text><text x="615" y="150">status, level</text>
+  <rect x="920" y="40" width="250" height="140" fill="#eef" stroke="#333"/><text x="935" y="65" class="t">enrollments</text><text x="935" y="90">id PK</text><text x="935" y="110">student_id FK users</text><text x="935" y="130">course_id FK courses</text>
+
+  <rect x="600" y="260" width="220" height="120" fill="#efe" stroke="#333"/><text x="615" y="285" class="t">course_modules</text><text x="615" y="310">course_id FK</text><text x="615" y="330">order_index</text>
+  <rect x="860" y="260" width="220" height="120" fill="#efe" stroke="#333"/><text x="875" y="285" class="t">lessons</text><text x="875" y="310">module_id FK</text><text x="875" y="330">content_type</text>
+  <rect x="1120" y="260" width="220" height="120" fill="#efe" stroke="#333"/><text x="1135" y="285" class="t">materials</text><text x="1135" y="310">lesson_id FK</text>
+
+  <rect x="860" y="430" width="220" height="120" fill="#fee" stroke="#333"/><text x="875" y="455" class="t">quizzes</text><text x="875" y="480">lesson_id/course_id FK</text>
+  <rect x="600" y="600" width="220" height="120" fill="#eef" stroke="#333"/><text x="615" y="625" class="t">questions</text><text x="615" y="650">quiz_id FK</text>
+  <rect x="860" y="600" width="220" height="120" fill="#eef" stroke="#333"/><text x="875" y="625" class="t">answers</text><text x="875" y="650">question_id FK</text><text x="875" y="670">is_correct</text>
+  <rect x="1120" y="600" width="240" height="120" fill="#eef" stroke="#333"/><text x="1135" y="625" class="t">quiz_results</text><text x="1135" y="650">student_id FK users</text><text x="1135" y="670">quiz_id FK quizzes</text>
+
+  <rect x="320" y="260" width="220" height="120" fill="#eef" stroke="#333"/><text x="335" y="285" class="t">progress</text><text x="335" y="310">student_id FK users</text><text x="335" y="330">lesson_id FK lessons</text>
+
+  <line x1="260" y1="95" x2="600" y2="115" stroke="#000"/>
+  <line x1="540" y1="95" x2="600" y2="95" stroke="#000"/>
+  <line x1="860" y1="100" x2="920" y2="100" stroke="#000"/>
+  <line x1="820" y1="300" x2="860" y2="300" stroke="#000"/>
+  <line x1="1080" y1="300" x2="1120" y2="300" stroke="#000"/>
+  <line x1="970" y1="380" x2="970" y2="430" stroke="#000"/>
+  <line x1="860" y1="490" x2="820" y2="620" stroke="#000"/>
+  <line x1="970" y1="550" x2="970" y2="600" stroke="#000"/>
+  <line x1="1080" y1="660" x2="1120" y2="660" stroke="#000"/>
+  <line x1="540" y1="320" x2="860" y2="320" stroke="#000"/>
+  <line x1="260" y1="140" x2="320" y2="300" stroke="#000"/>
+</svg>

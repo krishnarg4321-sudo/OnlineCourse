@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "OnlineCourse API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {"name":"Auth Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/auth/register","host":["{{baseUrl}}"],"path":["auth","register"]},"body":{"mode":"raw","raw":"{\n  \"name\":\"Test Student\",\n  \"email\":\"test.student@example.com\",\n  \"password\":\"Password@123\",\n  \"role\":\"STUDENT\"\n}"}}},
+    {"name":"Auth Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/auth/login","host":["{{baseUrl}}"],"path":["auth","login"]},"body":{"mode":"raw","raw":"{\n  \"email\":\"student1@portal.com\",\n  \"password\":\"password\"\n}"}}},
+    {"name":"Auth Login Invalid","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/auth/login","host":["{{baseUrl}}"],"path":["auth","login"]},"body":{"mode":"raw","raw":"{\n  \"email\":\"student1@portal.com\",\n  \"password\":\"wrong\"\n}"}}},
+    {"name":"Categories Public","request":{"method":"GET","url":{"raw":"{{baseUrl}}/categories","host":["{{baseUrl}}"],"path":["categories"]}}},
+    {"name":"Courses Public","request":{"method":"GET","url":{"raw":"{{baseUrl}}/courses?search=React&page=0&size=10","host":["{{baseUrl}}"],"path":["courses"],"query":[{"key":"search","value":"React"},{"key":"page","value":"0"},{"key":"size","value":"10"}]}}},
+    {"name":"Course Details","request":{"method":"GET","url":{"raw":"{{baseUrl}}/courses/1","host":["{{baseUrl}}"],"path":["courses","1"]}}},
+    {"name":"Enroll Course","request":{"method":"POST","header":[{"key":"Authorization","value":"******"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/enrollments","host":["{{baseUrl}}"],"path":["enrollments"]},"body":{"mode":"raw","raw":"{\n  \"courseId\":1\n}"}}},
+    {"name":"Enroll Duplicate 409","request":{"method":"POST","header":[{"key":"Authorization","value":"******"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/enrollments","host":["{{baseUrl}}"],"path":["enrollments"]},"body":{"mode":"raw","raw":"{\n  \"courseId\":1\n}"}}},
+    {"name":"My Enrollments","request":{"method":"GET","header":[{"key":"Authorization","value":"******"}],"url":{"raw":"{{baseUrl}}/enrollments/my","host":["{{baseUrl}}"],"path":["enrollments","my"]}}},
+    {"name":"Mark Progress","request":{"method":"POST","header":[{"key":"Authorization","value":"******"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/progress","host":["{{baseUrl}}"],"path":["progress"]},"body":{"mode":"raw","raw":"{\n  \"lessonId\":1,\n  \"completed\":true\n}"}}},
+    {"name":"Student Dashboard","request":{"method":"GET","header":[{"key":"Authorization","value":"******"}],"url":{"raw":"{{baseUrl}}/dashboard/student","host":["{{baseUrl}}"],"path":["dashboard","student"]}}},
+    {"name":"Instructor Dashboard","request":{"method":"GET","header":[{"key":"Authorization","value":"******"}],"url":{"raw":"{{baseUrl}}/dashboard/instructor","host":["{{baseUrl}}"],"path":["dashboard","instructor"]}}},
+    {"name":"Admin Dashboard","request":{"method":"GET","header":[{"key":"Authorization","value":"******"}],"url":{"raw":"{{baseUrl}}/dashboard/admin","host":["{{baseUrl}}"],"path":["dashboard","admin"]}}},
+    {"name":"Create Quiz","request":{"method":"POST","header":[{"key":"Authorization","value":"******"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/quizzes","host":["{{baseUrl}}"],"path":["quizzes"]},"body":{"mode":"raw","raw":"{\n  \"courseId\":1,\n  \"title\":\"Quick Quiz\"\n}"}}},
+    {"name":"Submit Quiz","request":{"method":"POST","header":[{"key":"Authorization","value":"******"},{"key":"Content-Type","value":"application/json"}],"url":{"raw":"{{baseUrl}}/quizzes/1/submit","host":["{{baseUrl}}"],"path":["quizzes","1","submit"]},"body":{"mode":"raw","raw":"{\n  \"selectedAnswers\": {\n    \"1\": 1,\n    \"2\": 4\n  }\n}"}}},
+    {"name":"Admin Report","request":{"method":"GET","header":[{"key":"Authorization","value":"******"}],"url":{"raw":"{{baseUrl}}/admin/reports","host":["{{baseUrl}}"],"path":["admin","reports"]}}}
+  ],
+  "variable": [
+    {"key":"baseUrl","value":"http://localhost:8080/api"},
+    {"key":"studentToken","value":""},
+    {"key":"instructorToken","value":""},
+    {"key":"adminToken","value":""}
+  ]
+}
